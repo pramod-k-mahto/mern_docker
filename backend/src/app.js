@@ -9,7 +9,7 @@ import conn from "./db/config.js";
 conn();
 
 const app = express();
-const PORT = process.env.PORT || 9000;
+const PORT = process.env.PORT || 7000;
 
 // ✅ CORS FIRST (important)
 app.use(
