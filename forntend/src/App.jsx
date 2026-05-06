@@ -56,7 +56,7 @@ function App() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>This is Home page</h2>
+      <h2>This is Home Page</h2>
 
       {/* FORM */}
       <form onSubmit={handleSubmit} style={{ marginTop: "20px" }}>
