@@ -14,7 +14,7 @@ services:
     build: ./forntend
     container_name: react-app
     ports:
-      - "5000:5000"
+      - "5000:3000"
     networks:
       - fullStack-net
     depends_on:
