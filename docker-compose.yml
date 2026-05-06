@@ -1,0 +1,40 @@
+services:
+  server:
+    build: ./backend
+    container_name: express-server
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mongo
+    networks:
+      - fullStack-net
+    restart: always
+
+  client:
+    build: ./forntend
+    container_name: react-app
+    ports:
+      - "3000:3000"
+    networks:
+      - fullStack-net
+    depends_on:
+      - server
+    restart: always
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    networks:
+      - fullStack-net
+    restart: always
+
+networks:
+  fullStack-net:
+    driver: bridge
+
+volumes:
+  mongo-data:
